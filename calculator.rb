@@ -1,6 +1,4 @@
-#Modules
-#require .Math
-
+@operators = ['+', '-', '*', '/', '%', 'sqrt', '**']
 #Methods
 
 def addition(num1, num2)
@@ -38,20 +36,26 @@ def end_check(input)
     return 1
   end
 end
-
+def operator_check(user_input[1])
+  if @operators.include?(user_input[1]) # doesn't work pass in user_input[1]        if @operators.inlude?(user_input[1])
+    return 'Valid'
+  else exit
+  end
+end
 
 #Main Program
 loop do 
   puts "Please input your desired operation or type quit"
-
-  user_input = gets.chomp
-
-  if end_check(user_input) == 1 || 2
+  
+  user_input = gets.chomp.split
+  if operator_check(user_input) == 'Valid'
+  return true
+  end
+  if end_check(user_input) == 1 
     user_input = user_input.split(' ')
     user_input[0] = user_input[0].to_i
     user_input[2] = user_input[2].to_i
-    if end_check(user_input) == 2
-      user_input[0] = prev_value
+    
 
     case user_input[1]
 
