@@ -50,13 +50,12 @@ class List
       else
         puts "Sorry, Me Don't Understand"
       end
-    break if choice == '5'
+    exit if choice == '5'
     end
   end
 
   def add_item(name, anything)
     @item_array << Item.new(name, anything)
-
   end
 
   def display_list
